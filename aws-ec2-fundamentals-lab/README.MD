@@ -50,6 +50,10 @@ Created a key pair used for secure SSH authentication to the EC2 instance.
 
 ### 5. EC2 Connection
 Connected to the instance using SSH / EC2 Instance Connect.
+problem here : Troubleshooting:
+- Verified Apache service status using systemctl
+- Ensured correct public IPv4 usage
+- Validated security group rules for HTTP traffic
 
 📸 `05-ec2-connection-success.png`
 
@@ -98,6 +102,7 @@ Attached an IAM role to the EC2 instance to securely access AWS services without
 🚧 EC2 Fundamentals Lab in progress (AWS SAA journey)
 
 ---
+
 
 ## Next Steps
 
