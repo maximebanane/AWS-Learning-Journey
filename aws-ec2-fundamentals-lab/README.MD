@@ -50,10 +50,12 @@ Created a key pair used for secure SSH authentication to the EC2 instance.
 
 ### 5. EC2 Connection
 Connected to the instance using SSH / EC2 Instance Connect.
-problem here : Troubleshooting:
-- Verified Apache service status using systemctl
-- Ensured correct public IPv4 usage
-- Validated security group rules for HTTP traffic
+
+### Key Pair
+
+The EC2 instance was launched using an SSH key pair (`ec2-key`) generated at the time of instance creation.  
+This key is required to securely access the instance via SSH.
+
 
 📸 `05-ec2-connection-success.png`
 
