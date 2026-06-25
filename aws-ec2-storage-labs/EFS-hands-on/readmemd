@@ -1,0 +1,85 @@
+# Amazon Elastic File System (EFS) Hands-On Lab
+
+## Overview
+
+This lab demonstrates how to create and mount an Amazon Elastic File System shared between EC2 instances.
+
+## AWS Services
+
+- Amazon EC2
+- Amazon EFS
+
+---
+
+# Objectives
+
+- Create an EFS File System
+- Configure Mount Targets
+- Mount EFS on EC2
+- Verify shared storage
+
+---
+
+# Step 1 - Create an EFS File System
+
+Created a new Amazon EFS file system.
+
+📷 Screenshot
+
+```
+screenshots/01-create-efs.png
+```
+
+---
+
+# Step 2 - Configure Mount Targets
+
+Verified mount targets inside the VPC.
+
+📷 Screenshot
+
+```
+screenshots/02-mount-targets.png
+```
+
+---
+
+# Step 3 - Mount EFS
+
+Mounted the file system on the EC2 instance.
+
+📷 Screenshot
+
+```
+screenshots/03-mount-efs.png
+```
+
+---
+
+# Step 4 - Verify Shared Storage
+
+Verified that files stored in EFS are accessible.
+
+📷 Screenshot
+
+```
+screenshots/04-shared-storage.png
+```
+
+---
+
+# What I Learned
+
+- EFS provides shared storage for multiple EC2 instances
+- EFS automatically scales with stored data
+- EFS supports concurrent access
+- EFS is managed by AWS
+
+---
+
+# Real-World Applications
+
+- Web server farms
+- CMS platforms
+- Shared application storage
+- Machine Learning workloads
