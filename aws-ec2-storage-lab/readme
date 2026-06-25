@@ -1,0 +1,232 @@
+# Amazon EBS - Hands-On Lab
+
+## Overview
+
+This lab demonstrates how to create, attach, format, mount, resize, and remove an Amazon Elastic Block Store (EBS) volume attached to an EC2 instance.
+
+## AWS Services
+
+- Amazon EC2
+- Amazon EBS
+
+---
+
+# Architecture
+
+EC2 Instance
+        │
+        │ Attach
+        ▼
+ Amazon EBS Volume
+        │
+        ▼
+ Linux File System (ext4)
+
+---
+
+# Objectives
+
+- Create an EBS Volume
+- Attach the volume to an EC2 instance
+- Format the volume with ext4
+- Mount the volume
+- Verify persistence
+- Resize the volume
+- Remove the volume safely
+
+---
+
+# Step 1 - Create an EBS Volume
+
+Created a new General Purpose SSD (gp3) volume in the same Availability Zone as the EC2 instance.
+
+📷 Screenshot
+
+```
+screenshots/create-ebs-volume.png
+```
+
+---
+
+# Step 2 - Attach the Volume
+
+Attached the EBS volume to the EC2 instance as:
+
+```
+/dev/xvdf
+```
+
+📷 Screenshot
+
+```
+screenshots/attach-volume.png
+```
+
+---
+
+# Step 3 - Verify the Device
+
+Connected through SSH and verified the new disk.
+
+```bash
+lsblk
+```
+
+Output confirms the presence of the new block device.
+
+📷 Screenshot
+
+```
+screenshots/lsblk-before-format.png
+```
+
+---
+
+# Step 4 - Create a File System
+
+Formatted the new disk using ext4.
+
+```bash
+sudo mkfs -t ext4 /dev/xvdf
+```
+
+📷 Screenshot
+
+```
+screenshots/mkfs.png
+```
+
+---
+
+# Step 5 - Mount the Volume
+
+Created the mount directory.
+
+```bash
+sudo mkdir /data
+```
+
+Mounted the EBS volume.
+
+```bash
+sudo mount /dev/xvdf /data
+```
+
+Verified successfully.
+
+```bash
+df -h
+```
+
+📷 Screenshot
+
+```
+screenshots/mounted-volume.png
+```
+
+---
+
+# Step 6 - Automatic Mount After Reboot
+
+Retrieved the UUID.
+
+```bash
+sudo blkid
+```
+
+Added the volume inside:
+
+```
+/etc/fstab
+```
+
+Tested configuration.
+
+```bash
+sudo mount -a
+```
+
+📷 Screenshot
+
+```
+screenshots/fstab.png
+```
+
+---
+
+# Step 7 - Resize the Volume
+
+Modified the EBS volume size from the AWS Console.
+
+Expanded the filesystem.
+
+```bash
+sudo growpart
+```
+
+```bash
+sudo resize2fs
+```
+
+Verified with:
+
+```bash
+df -h
+```
+
+📷 Screenshot
+
+```
+screenshots/resize-volume.png
+```
+
+---
+
+# Step 8 - Detach and Delete
+
+Unmounted the filesystem.
+
+```bash
+sudo umount /data
+```
+
+Detached and deleted the EBS volume from AWS.
+
+📷 Screenshot
+
+```
+screenshots/delete-volume.png
+```
+
+---
+
+# What I Learned
+
+- EBS volumes are network-attached storage.
+- An EBS volume must be located in the same Availability Zone as the EC2 instance.
+- Volumes can be detached and attached to another instance.
+- File systems must be created before mounting.
+- UUIDs should be used in `/etc/fstab`.
+- Storage can be resized without data loss.
+
+---
+
+# Real-World Applications
+
+- Database storage
+- Persistent Linux servers
+- Web servers
+- Enterprise applications
+- Stateful workloads
+- Production environments
+
+---
+
+# Skills Demonstrated
+
+- Amazon EC2
+- Amazon EBS
+- Linux Storage Management
+- SSH
+- ext4 File System
+- AWS Console
