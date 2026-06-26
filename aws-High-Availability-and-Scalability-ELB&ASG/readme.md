@@ -16,7 +16,6 @@ The architecture distributes incoming traffic across multiple EC2 instances and 
 - Launch Templates
 - Auto Scaling Groups (ASG)
 - Amazon CloudWatch
-- AWS Certificate Manager (ACM)
 - Security Groups
 
 ---
@@ -42,7 +41,8 @@ The architecture distributes incoming traffic across multiple EC2 instances and 
             Launch Template
 ```
 
-📷 Screenshot:
+📷 Architecture Diagram
+
 - architecture-overview.png
 
 ---
@@ -53,9 +53,9 @@ The architecture distributes incoming traffic across multiple EC2 instances and 
 
 A Target Group was created to register EC2 instances and perform health checks before routing traffic.
 
-### Screenshot
+📷 Screenshot
 
-- target-group-created.png
+- **01-target-group-created.png**
 
 ---
 
@@ -70,9 +70,9 @@ Configuration:
 - HTTP Listener (Port 80)
 - Associated with Target Group
 
-### Screenshot
+📷 Screenshot
 
-- alb-created.png
+- **02-alb-created.png**
 
 ---
 
@@ -82,9 +82,9 @@ Both EC2 instances were successfully registered.
 
 Health status changed to **Healthy** after passing health checks.
 
-### Screenshot
+📷 Screenshot
 
-- healthy-targets.png
+- **03-healthy-targets.png**
 
 ---
 
@@ -92,49 +92,27 @@ Health status changed to **Healthy** after passing health checks.
 
 Traffic was successfully distributed across multiple EC2 instances.
 
-Refreshing the webpage returned responses from different servers.
+Refreshing the webpage returned responses from different backend servers, confirming that the Application Load Balancer was distributing requests correctly.
 
-### Screenshot
+📷 Screenshot
 
-- alb-working.png
-
----
-
-# Part 2 – HTTPS using ACM
-
-## Request SSL Certificate
-
-An SSL/TLS certificate was requested using AWS Certificate Manager.
-
-### Screenshot
-
-- acm-certificate.png
+- **04-alb-working.png**
 
 ---
 
-## Configure HTTPS Listener
+## Test Path-Based Routing
 
-Added an HTTPS Listener (443) to the Application Load Balancer.
+Configured and verified a path-based routing rule.
 
-The ACM certificate was attached to enable encrypted traffic.
+Requests sent to **/error** were successfully forwarded according to the configured listener rule.
 
-### Screenshot
+📷 Screenshot
 
-- https-listener.png
-
----
-
-## Test HTTPS
-
-Verified secure access using HTTPS.
-
-### Screenshot
-
-- https-working.png
+- **05-path-based-routing.png**
 
 ---
 
-# Part 3 – Launch Template
+# Part 2 – Launch Template
 
 Created a Launch Template containing:
 
@@ -146,13 +124,13 @@ Created a Launch Template containing:
 
 The Launch Template is used by the Auto Scaling Group to launch identical EC2 instances automatically.
 
-### Screenshot
+📷 Screenshot
 
-- launch-template.png
+- **06-launch-template.png**
 
 ---
 
-# Part 4 – Auto Scaling Group
+# Part 3 – Auto Scaling Group
 
 Created an Auto Scaling Group.
 
@@ -162,29 +140,29 @@ Configuration:
 - Desired Capacity: 2
 - Maximum Capacity: 4
 
-The ASG was attached to the existing Application Load Balancer.
+The Auto Scaling Group was attached to the existing Application Load Balancer.
 
-### Screenshot
+📷 Screenshot
 
-- auto-scaling-group.png
+- **07-auto-scaling-group.png**
 
 ---
 
-# Part 5 – Scaling Policies
+# Part 4 – Scaling Policies
 
-Configured Dynamic Scaling Policies based on CloudWatch metrics.
+Configured Dynamic Scaling Policies using CloudWatch metrics.
 
 Example:
 
-- Scale Out:
-    - CPU > 70%
+- Scale Out
+  - CPU > 70%
 
-- Scale In:
-    - CPU < 30%
+- Scale In
+  - CPU < 30%
 
-### Screenshot
+📷 Screenshot
 
-- scaling-policy.png
+- **08-scaling-policy.png**
 
 ---
 
@@ -192,17 +170,17 @@ Example:
 
 Generated CPU load to trigger a Scale Out event.
 
-The Auto Scaling Group launched an additional EC2 instance automatically.
+The Auto Scaling Group automatically launched an additional EC2 instance.
 
-### Screenshot
+📷 Screenshot
 
-- scale-out.png
+- **09-scale-out.png**
 
-After CPU usage decreased, the Auto Scaling Group terminated the extra instance.
+After CPU utilization returned to normal, the Auto Scaling Group automatically terminated the additional EC2 instance.
 
-### Screenshot
+📷 Screenshot
 
-- scale-in.png
+- **10-scale-in.png**
 
 ---
 
@@ -214,14 +192,14 @@ Deploy applications across multiple Availability Zones to eliminate single point
 
 ## Scalability
 
-Automatically increase or decrease infrastructure according to demand.
+Automatically increase or decrease infrastructure capacity according to demand.
 
 ## Application Load Balancer
 
 - Layer 7 (HTTP / HTTPS)
 - Host-based routing
 - Path-based routing
-- SSL termination
+- Content-based routing
 - Web applications
 
 ## Network Load Balancer
@@ -242,7 +220,7 @@ Automatically increase or decrease infrastructure according to demand.
 
 Allows users to continue interacting with the same EC2 instance during a session.
 
-## Cross Zone Load Balancing
+## Cross-Zone Load Balancing
 
 Evenly distributes requests across all registered instances, regardless of Availability Zone.
 
@@ -268,7 +246,7 @@ Allows existing connections to finish before an EC2 instance is removed from ser
 - Deploying Application Load Balancers
 - Creating Target Groups
 - Configuring Health Checks
-- Implementing HTTPS using ACM
+- Implementing Path-Based Routing
 - Building Launch Templates
 - Creating Auto Scaling Groups
 - Configuring Dynamic Scaling Policies
