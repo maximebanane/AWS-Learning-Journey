@@ -138,9 +138,9 @@ Created an Auto Scaling Group.
 
 **Configuration**
 
-- Minimum Capacity: 2
-- Desired Capacity: 2
-- Maximum Capacity: 4
+- Minimum Capacity: 1
+- Desired Capacity: 1
+- Maximum Capacity: 1
 
 The Auto Scaling Group was attached to the existing Application Load Balancer.
 
