@@ -150,16 +150,12 @@ During this lab you will:
 # Screenshots
 
 ```
-01-rds-dashboard.png
-02-rds-create-database.png
-03-aurora-engine-selection.png
-04-aurora-cluster-created.png
-05-elasticache-dashboard.png
-06-create-redis-cluster.png
-07-redis-cluster-configuration.png
-08-redis-cluster-created.png
-09-cache-endpoint.png
-10-delete-elasticache-cluster.png
+01-elasticache-dashboard.png
+02-create-redis-oss-cache.png
+03-cache-name.png
+04-cache-created.png
+05-cache-endpoint.png
+06-delete-cache.png
 ```
 
 ---
