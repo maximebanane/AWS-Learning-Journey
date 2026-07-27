@@ -148,49 +148,31 @@ Can be used with:
 
 ---
 
-# Screenshots
-
-```
 screenshots/
 
-01-dns-overview.png
+01-hosted-zone-created.png
 
-02-domain-registration.png
+02-first-record-created.png
 
-03-hosted-zone-created.png
+03-ec2-instance.png
 
-04-first-record-created.png
+04-alias-record.png
 
-05-ec2-setup.png
+05-weighted-routing.png
 
-06-ttl-record.png
+06-latency-routing.png
 
-07-cname-vs-alias.png
+07-health-check.png
 
-08-simple-routing.png
+08-failover-routing.png
 
-09-weighted-routing.png
+09-geolocation-routing.png
 
-10-latency-routing.png
+10-geoproximity-or-ip-routing.png
 
-11-health-check-created.png
+11-multi-value-routing.png
 
-12-health-check-working.png
-
-13-failover-routing.png
-
-14-geolocation-routing.png
-
-15-geoproximity-routing.png
-
-16-ip-based-routing.png
-
-17-multi-value-routing.png
-
-18-third-party-domain.png
-
-19-cleanup.png
-```
+12-final-architecture.png
 
 ---
 
