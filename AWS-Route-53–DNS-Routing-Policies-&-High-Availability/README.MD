@@ -151,28 +151,14 @@ Can be used with:
 screenshots/
 
 01-hosted-zone-created.png
-
-02-first-record-created.png
-
-03-ec2-instance.png
-
-04-alias-record.png
-
-05-weighted-routing.png
-
-06-latency-routing.png
-
-07-health-check.png
-
-08-failover-routing.png
-
-09-geolocation-routing.png
-
-10-geoproximity-or-ip-routing.png
-
-11-multi-value-routing.png
-
-12-final-architecture.png
+02-a-record-created.png
+03-alias-record-created.png
+04-weighted-routing.png
+05-latency-routing.png
+06-health-check-created.png
+07-failover-routing.png
+08-geolocation-routing.png
+09-multi-value-routing.png
 
 ---
 
