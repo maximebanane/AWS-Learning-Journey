@@ -201,20 +201,13 @@ During this lab I learned how to:
 
 ---
 
-# Cleanup
+## Third-Party Domains
 
-To avoid AWS charges:
+Amazon Route 53 can manage DNS records for domains purchased from third-party registrars such as OVH, GoDaddy, Namecheap, or Gandi.
 
-- Delete Health Checks
-- Delete DNS Records
-- Delete Hosted Zones
-- Delete test EC2 instances
-- Release Elastic IPs (if used)
+To do this:
 
----
-
-# References
-
-AWS Route 53 Documentation
-
-https://docs.aws.amazon.com/route53/
+1. Create a Hosted Zone in Route 53.
+2. Copy the Route 53 Name Servers.
+3. Replace the domain's Name Servers at the registrar.
+4. Manage all DNS records directly from Route 53.
