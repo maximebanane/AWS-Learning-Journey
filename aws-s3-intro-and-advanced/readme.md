@@ -8,10 +8,6 @@ Amazon S3 is a highly scalable, durable, secure and fully managed object storage
 
 ## 1. S3 Overview
 
-### Screenshot
-
-`screenshots/intro/01-create-bucket.png`
-
 ### Topics
 
 - Buckets
