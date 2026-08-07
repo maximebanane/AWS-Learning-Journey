@@ -152,8 +152,7 @@ Amazon S3 is a highly scalable, durable, secure and fully managed object storage
 
 ### Screenshots
 
-- `screenshots/advanced/04-event-notification.png`
-- `screenshots/advanced/05-event-trigger.png`
+- `screenshots/advanced/04-event-notification.png``
 
 ### Topics
 
@@ -165,9 +164,6 @@ Amazon S3 is a highly scalable, durable, secure and fully managed object storage
 
 ## 11. Performance
 
-### Screenshot
-
-`screenshots/advanced/06-performance.png`
 
 ### Topics
 
@@ -182,7 +178,7 @@ Amazon S3 is a highly scalable, durable, secure and fully managed object storage
 
 ### Screenshot
 
-`screenshots/advanced/07-s3-select.png`
+`screenshots/advanced/05-s3-select.png`
 
 ### Topics
 
@@ -196,7 +192,7 @@ Amazon S3 is a highly scalable, durable, secure and fully managed object storage
 
 ### Screenshot
 
-`screenshots/advanced/08-batch-operations.png`
+`screenshots/advanced/06-batch-operations.png`
 
 ### Topics
 
