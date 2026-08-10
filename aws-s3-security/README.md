@@ -179,10 +179,6 @@ Protected object versions cannot be overwritten or deleted by any user, includin
 
 A Legal Hold can prevent an object from being deleted without requiring a specific retention period.
 
-### Hands-On
-
-![S3 Object Lock](screenshots/10-s3-object-lock.png)
-
 ---
 
 ## 8. S3 Access Points
@@ -198,9 +194,7 @@ Each Access Point can have:
 
 Instead of maintaining one complex bucket policy, different applications can use dedicated Access Points.
 
-### Hands-On
 
-![S3 Access Point](screenshots/11-s3-access-point.png)
 
 ---
 
@@ -224,9 +218,6 @@ The original object stored in S3 remains unchanged.
 
 Application → S3 Object Lambda Access Point → AWS Lambda → S3 Object
 
-### Hands-On
-
-![S3 Object Lambda](screenshots/12-s3-object-lambda.png)
 
 ---
 
