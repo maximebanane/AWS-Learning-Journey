@@ -64,7 +64,6 @@ Application Load Balancer
 EC2 Instances
 ```
 
-![CloudFront ALB Origin](screenshots/03-cloudfront-alb-origin.png)
 
 ---
 
@@ -77,7 +76,6 @@ Two approaches are available:
 - Allowlist: only selected countries can access the content.
 - Blocklist: selected countries are prevented from accessing the content.
 
-![CloudFront Geo Restriction](screenshots/04-cloudfront-geo-restriction.png)
 
 ---
 
@@ -93,7 +91,6 @@ Available options include:
 
 Price Classes provide a trade-off between global performance and cost.
 
-![CloudFront Price Classes](screenshots/05-cloudfront-price-classes.png)
 
 ---
 
@@ -113,7 +110,6 @@ Example:
 
 Using `/*` invalidates all cached objects in the distribution.
 
-![CloudFront Cache Invalidation](screenshots/06-cloudfront-cache-invalidation.png)
 
 ---
 
@@ -146,7 +142,6 @@ Global Accelerator
 Regional Endpoints
 ```
 
-![Global Accelerator Overview](screenshots/07-global-accelerator-overview.png)
 
 ---
 
@@ -163,7 +158,6 @@ Possible endpoints include:
 - EC2 Instances
 - Elastic IP addresses
 
-![Global Accelerator Hands-On](screenshots/08-global-accelerator-hands-on.png)
 
 ---
 
