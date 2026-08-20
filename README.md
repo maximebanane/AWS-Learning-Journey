@@ -12,16 +12,6 @@ This repository documents my hands-on practice, labs, and projects while studyin
 - Develop cloud architecture skills
 - Progress toward AWS Solutions Architect Associate
 
-## Labs and Projects
-
-| Project | Status |
-|----------|----------|
-| AWS IAM Fundamentals Lab | In Progress |
-| AWS EC2 Lab | Planned |
-| AWS S3 Lab | Planned |
-| AWS VPC Networking Lab | Planned |
-| AWS RDS Lab | Planned |
-
 ## Skills Covered
 
 - AWS IAM
@@ -42,6 +32,4 @@ Each project includes:
 - Screenshots
 - Key lessons learned
 
-## Progress
 
-Currently studying AWS Solutions Architect Associate and building hands-on labs alongside the course material.
