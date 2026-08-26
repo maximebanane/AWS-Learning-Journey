@@ -179,9 +179,7 @@ It is designed for large-scale analytical workloads and complex SQL queries.
 
 Redshift Spectrum can also query data stored directly in Amazon S3.
 
-### Screenshot
 
-No screenshot required for this section unless a Redshift hands-on lab is completed.
 
 ---
 
@@ -207,11 +205,7 @@ Amazon OpenSearch
       │
       ▼
 OpenSearch Dashboards
-```
 
-### Screenshot
-
-No screenshot required for this section.
 
 ---
 
@@ -241,9 +235,6 @@ Amazon EMR / Spark
 Processed Data
 ```
 
-### Screenshot
-
-No screenshot required for this section.
 
 ---
 
@@ -275,15 +266,7 @@ Dashboard
 
 QuickSight can also connect to services such as Redshift and RDS.
 
-## Optional Screenshot
 
-### Screenshot 05 — QuickSight Dashboard
-
-> `05-quicksight-dashboard.png`
-
-If a QuickSight hands-on lab is completed, show a dashboard using data queried through Athena.
-
-This screenshot is optional.
 
 ---
 
@@ -307,9 +290,7 @@ Amazon Athena
 Amazon Redshift
 ```
 
-### Screenshot
 
-No screenshot required for this section.
 
 ---
 
@@ -334,9 +315,7 @@ Managed Service for Apache Flink
 Real-Time Analytics
 ```
 
-### Screenshot
 
-No screenshot required for this section.
 
 ---
 
@@ -363,9 +342,7 @@ Amazon MSK
 Consumers
 ```
 
-### Screenshot
 
-No screenshot required for this section.
 
 ---
 
@@ -400,9 +377,7 @@ Kinesis Data Streams
 
 This architecture separates **data ingestion, storage, cataloging, analytics, and visualization**.
 
-### Screenshot
 
-No AWS Console screenshot is required for this section. The architecture diagram is sufficient to demonstrate understanding of the pipeline.
 
 ---
 
@@ -460,19 +435,7 @@ Less Data Scanned
 
 ---
 
-# Repository Structure
 
-```text
-aws-data-analytics/
-│
-├── README.md
-│
-└── screenshots/
-    ├── 01-athena-query-editor.png
-    ├── 02-athena-query-results.png
-    ├── 03-glue-crawler.png
-    ├── 04-glue-data-catalog.png
-    └── 05-quicksight-dashboard.png   # Optional
 ```
 
 ---
