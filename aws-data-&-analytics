@@ -1,0 +1,349 @@
+# AWS Data & Analytics
+
+This project documents my hands-on exploration of AWS data and analytics services as part of my AWS Solutions Architect learning path.
+
+The goal is to understand how AWS services can be combined to **store, catalog, query, process, analyze, and visualize large datasets**.
+
+---
+
+## Architecture Overview
+
+A common serverless analytics architecture on AWS can look like:
+
+```text
+Data Sources
+     │
+     ▼
+Amazon S3
+     │
+     ├──────────────► AWS Glue
+     │                 │
+     │                 ▼
+     │            Glue Data Catalog
+     │                 │
+     ▼                 ▼
+Amazon Athena ◄────────┘
+     │
+     ▼
+Amazon QuickSight
+```
+
+This architecture allows data stored in Amazon S3 to be cataloged with AWS Glue, queried using SQL with Amazon Athena, and visualized using Amazon QuickSight.
+
+---
+
+## Amazon Athena
+
+Amazon Athena is a **serverless interactive query service** that makes it possible to analyze data directly in Amazon S3 using standard SQL.
+
+### Key concepts
+
+* Serverless: no infrastructure to manage
+* Queries data directly from Amazon S3
+* Uses standard SQL
+* Integrates with the AWS Glue Data Catalog
+* Supports formats such as CSV, JSON, Parquet and ORC
+* Pricing is primarily based on the amount of data scanned
+
+### Hands-On
+
+In this lab, I used Athena to query data stored in an S3 bucket.
+
+```sql
+SELECT *
+FROM my_database.my_table
+LIMIT 10;
+```
+
+The objective was to understand the relationship between:
+
+```text
+S3 → Glue Data Catalog → Athena → SQL Results
+```
+
+### Screenshots
+
+> Add screenshot: Athena Query Editor
+
+> Add screenshot: Successful SQL query and results
+
+---
+
+## AWS Glue
+
+AWS Glue is a **serverless data integration and ETL service**.
+
+It can discover, prepare, transform, and catalog data for analytics workloads.
+
+### Important components
+
+**Glue Crawler**
+
+Automatically scans data sources and determines their schema.
+
+```text
+Amazon S3
+    │
+    ▼
+Glue Crawler
+    │
+    ▼
+Glue Data Catalog
+    │
+    ▼
+Athena
+```
+
+**Glue Data Catalog**
+
+Central metadata repository containing information about datasets, including:
+
+* databases
+* tables
+* schemas
+* partitions
+* data locations
+
+Athena can use this metadata to query data stored in S3.
+
+---
+
+## Amazon Redshift
+
+Amazon Redshift is AWS's managed **cloud data warehouse**.
+
+It is designed for large-scale analytical workloads and complex SQL queries.
+
+### Redshift vs Athena
+
+| Amazon Athena               | Amazon Redshift                        |
+| --------------------------- | -------------------------------------- |
+| Serverless query service    | Data warehouse                         |
+| Queries data directly in S3 | Data stored/managed for analytics      |
+| Pay per data scanned        | Provisioned or serverless capacity     |
+| Great for ad-hoc queries    | Great for repeated analytics workloads |
+| Minimal administration      | More data warehouse capabilities       |
+
+Redshift Spectrum can also query data stored directly in Amazon S3.
+
+---
+
+## Amazon OpenSearch Service
+
+Amazon OpenSearch Service is used for **search, log analytics, observability, and near-real-time data analysis**.
+
+Typical use cases include:
+
+* application log analysis
+* full-text search
+* monitoring
+* security analytics
+* dashboards
+
+Example:
+
+```text
+Application Logs
+      │
+      ▼
+Amazon OpenSearch
+      │
+      ▼
+OpenSearch Dashboards
+```
+
+---
+
+## Amazon EMR
+
+Amazon EMR is a managed big-data platform for running frameworks such as:
+
+* Apache Spark
+* Apache Hadoop
+* Apache Hive
+* Apache HBase
+
+It is designed for large-scale distributed data processing.
+
+Example:
+
+```text
+Large Dataset
+     │
+     ▼
+Amazon S3
+     │
+     ▼
+Amazon EMR / Spark
+     │
+     ▼
+Processed Data
+```
+
+---
+
+## Amazon QuickSight
+
+Amazon QuickSight is AWS's **business intelligence and visualization service**.
+
+It can create:
+
+* dashboards
+* charts
+* reports
+* interactive analytics
+
+A typical architecture is:
+
+```text
+S3 → Athena → QuickSight → Dashboard
+```
+
+QuickSight can also connect to services such as Redshift and RDS.
+
+---
+
+## AWS Lake Formation
+
+AWS Lake Formation simplifies the creation and management of **data lakes on AWS**.
+
+It provides centralized mechanisms for:
+
+* data access
+* permissions
+* governance
+* data discovery
+
+It commonly works with:
+
+```text
+Amazon S3
+AWS Glue
+Amazon Athena
+Amazon Redshift
+```
+
+---
+
+## Amazon Managed Service for Apache Flink
+
+Amazon Managed Service for Apache Flink can process and analyze **streaming data in real time**.
+
+It can consume streams coming from services such as Amazon Kinesis Data Streams.
+
+Example:
+
+```text
+Applications / Devices
+          │
+          ▼
+Kinesis Data Streams
+          │
+          ▼
+Managed Service for Apache Flink
+          │
+          ▼
+Real-Time Analytics
+```
+
+---
+
+## Amazon MSK
+
+Amazon Managed Streaming for Apache Kafka (Amazon MSK) provides managed **Apache Kafka clusters** on AWS.
+
+AWS manages much of the underlying infrastructure, including:
+
+* cluster provisioning
+* broker availability
+* infrastructure maintenance
+* integration with AWS networking and security
+
+Typical architecture:
+
+```text
+Producers
+    │
+    ▼
+Amazon MSK
+    │
+    ▼
+Consumers
+```
+
+---
+
+## Big Data Ingestion Pipeline
+
+AWS services can be combined to build scalable ingestion and analytics pipelines.
+
+Example:
+
+```text
+Applications
+     │
+     ▼
+Kinesis Data Streams
+     │
+     ├────────► Lambda
+     │
+     └────────► Data Firehose
+                      │
+                      ▼
+                  Amazon S3
+                      │
+                      ▼
+                  AWS Glue
+                      │
+                      ▼
+               Amazon Athena
+                      │
+                      ▼
+              Amazon QuickSight
+```
+
+This architecture separates **data ingestion, storage, cataloging, analytics, and visualization**.
+
+---
+
+## Key Takeaways
+
+This module helped me understand the role of the main AWS analytics services:
+
+| Service                          | Main Purpose                 |
+| -------------------------------- | ---------------------------- |
+| Athena                           | Serverless SQL queries on S3 |
+| Glue                             | ETL and Data Catalog         |
+| Redshift                         | Data warehousing             |
+| OpenSearch                       | Search and log analytics     |
+| EMR                              | Big-data processing          |
+| QuickSight                       | Business intelligence        |
+| Lake Formation                   | Data lake governance         |
+| Managed Service for Apache Flink | Real-time stream processing  |
+| MSK                              | Managed Apache Kafka         |
+| S3                               | Data lake / object storage   |
+
+The most important architectural distinction is choosing the appropriate service depending on whether the workload requires **ad-hoc SQL queries, data warehousing, distributed processing, search, streaming, or visualization**.
+
+---
+
+## Skills Demonstrated
+
+* AWS analytics architecture
+* Amazon S3 data storage
+* Serverless SQL with Amazon Athena
+* AWS Glue Data Catalog
+* Data lake concepts
+* Streaming architectures
+* Selection of AWS analytics services
+* AWS Solutions Architect design principles
+
+---
+
+## Next Steps
+
+* Build an S3 + Glue + Athena analytics workflow
+* Optimize Athena queries using Parquet and partitioning
+* Explore real-time ingestion with Kinesis
+* Build a visualization layer with QuickSight
+* Apply IAM least-privilege permissions to analytics workloads
