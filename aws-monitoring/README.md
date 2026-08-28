@@ -418,23 +418,8 @@ and:
 
 ---
 
-## AWS Config Hands-On
 
-In this lab, AWS Config is used to evaluate AWS resource configurations and compliance.
 
-### Screenshot 09 — AWS Config
-
-```markdown
-![AWS Config](screenshots/09-aws-config.png)
-```
-
-### Screenshot 10 — AWS Config Compliance
-
-```markdown
-![AWS Config Compliance](screenshots/10-aws-config-compliance.png)
-```
-
----
 
 # 10. CloudWatch vs CloudTrail vs AWS Config
 
