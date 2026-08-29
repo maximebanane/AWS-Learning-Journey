@@ -28,7 +28,7 @@ Key concepts:
 
 SCPs define the **maximum permissions** available to accounts or Organizational Units. They do not directly grant permissions.
 
-![AWS Organizations](screenshots/01-organizations.png)
+
 
 ---
 
@@ -74,7 +74,7 @@ Simplified:
 
 Understanding this evaluation logic is essential when troubleshooting AWS permissions.
 
-![IAM Policy Evaluation Logic](screenshots/02-iam-policy-evaluation.png)
+
 
 ---
 
@@ -91,7 +91,7 @@ Key concepts:
 
 Instead of creating separate IAM users in every AWS account, users can authenticate centrally and receive permissions based on assigned Permission Sets.
 
-![AWS IAM Identity Center](screenshots/03-iam-identity-center.png)
+
 
 ---
 
@@ -125,7 +125,7 @@ Key concepts:
 
 Control Tower is particularly useful for organizations that need to manage many AWS accounts while enforcing security and governance standards.
 
-![AWS Control Tower](screenshots/04-control-tower.png)
+
 
 ---
 
