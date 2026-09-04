@@ -444,9 +444,6 @@ RDS Password
 
 The application retrieves the current password dynamically instead of hardcoding it.
 
-### Screenshot
-
-![Secrets Manager Rotation](screenshots/06-secrets-manager-rotation.png)
 
 ---
 
@@ -506,9 +503,7 @@ Certificate validation can use:
 
 DNS validation is generally preferred because renewal can remain automated.
 
-### Screenshot
 
-![ACM Certificate](screenshots/07-acm-certificate.png)
 
 ---
 
@@ -559,7 +554,7 @@ AWS also provides managed rule groups.
 
 ### Screenshot
 
-![WAF Web ACL](screenshots/8-waf-web-acl.png)
+![WAF Web ACL](screenshots/6-waf-web-acl.png)
 
 ---
 
@@ -669,7 +664,7 @@ WAF → Web request filtering
 
 ### Screenshot
 
-![WAF and Shield](screenshots/9-waf-shield.png)
+![WAF and Shield](screenshots/7-waf-shield.png)
 
 ---
 
@@ -757,9 +752,6 @@ GuardDuty is primarily about:
 
 > **Threat detection.**
 
-### Screenshot
-
-![GuardDuty](screenshots/10-guardduty.png)
 
 ---
 
@@ -798,9 +790,6 @@ Inspector is primarily about:
 
 > **Finding vulnerabilities in workloads and software.**
 
-### Screenshot
-
-![Amazon Inspector](screenshots/11-inspector.png)
 
 ---
 
@@ -838,9 +827,7 @@ Macie is primarily about:
 
 > **Finding sensitive data stored in S3.**
 
-### Screenshot
 
-![Amazon Macie](screenshots/14-macie.png)
 
 ---
 
