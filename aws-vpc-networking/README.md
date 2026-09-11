@@ -401,9 +401,6 @@ Benefits include:
 
 Unlike Site-to-Site VPN, Direct Connect is not simply an encrypted tunnel across the public Internet.
 
-![Direct Connect](screenshots/14-direct-connect.png)
-
----
 
 ## 15. Direct Connect + Site-to-Site VPN
 
@@ -420,7 +417,6 @@ Direct Connect + VPN
 = dedicated path + encryption
 ```
 
-![Direct Connect VPN](screenshots/15-direct-connect-vpn.png)
 
 ---
 
@@ -446,7 +442,7 @@ Transit Gateway supports:
 - Transitive routing
 - Large network architectures
 
-![Transit Gateway](screenshots/16-transit-gateway.png)
+
 
 ---
 
@@ -463,7 +459,7 @@ Use cases include:
 
 Unlike Flow Logs, Traffic Mirroring can provide actual packet-level traffic to inspection tools.
 
-![Traffic Mirroring](screenshots/17-traffic-mirroring.png)
+
 
 ---
 
@@ -484,7 +480,7 @@ IPv4 all destinations = 0.0.0.0/0
 IPv6 all destinations = ::/0
 ```
 
-![IPv6](screenshots/18-ipv6-vpc.png)
+
 
 ---
 
@@ -504,7 +500,7 @@ Egress-Only IGW
 
 It provides a concept similar to outbound-only Internet access without performing NAT.
 
-![Egress Only IGW](screenshots/19-egress-only-igw.png)
+
 
 ---
 
@@ -524,7 +520,7 @@ Important cost areas include:
 
 Architecture decisions should therefore consider both performance and data-transfer costs.
 
-![Networking Costs](screenshots/20-networking-costs.png)
+
 
 ---
 
@@ -542,7 +538,7 @@ Capabilities include:
 
 It provides more advanced inspection capabilities than Security Groups and NACLs alone.
 
-![Network Firewall](screenshots/21-network-firewall.png)
+
 
 ---
 
